@@ -53,6 +53,8 @@
 
 .form__paragraph {
     font-size: larger;
+    text-align: center;
+
 }
 
 .form__paragraph--smaller {
