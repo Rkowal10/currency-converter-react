@@ -1,13 +1,11 @@
 import "./style.css";
+import React from "react";
 
-const Result = ({ amount, currency, rate }) => {
-    const result = amount / rate;
+const Result = ({ result }) => (
 
-    return (
-        <p className="result">
-            <strong>{result.toFixed(2)} {currency}</strong>
-        </p>
-    );
-};
+    <p className="result">
+        <strong>{result.result.toFixed(2)} {result.currency}</strong>
+    </p>
+);
 
 export default Result;
