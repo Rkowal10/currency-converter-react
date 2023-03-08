@@ -1,18 +1,17 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { currencies } from "../currencies";
 import Result from "../Result";
 
-const Form = ({ title }) => {
+const Form = ({ title, result, calculateResult }) => {
     const [amount, setNewAmount] = useState("");
     const [currency, setNewCurrency] = useState(currencies[0].name);
-    const rate = currencies.find(({ name }) => name === currency).value;
 
     const onSelectChange = ({ target }) => setNewCurrency(target.value);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-
+        calculateResult(amount, currency);
     };
 
     return (
@@ -53,9 +52,7 @@ const Form = ({ title }) => {
                 <button className="form__button">Oblicz</button>
                 <p className="form__paragraph">Otrzymasz:</p>
                 <Result
-                    amount={amount}
-                    rate={rate}
-                    currency={currency}
+                    result={result}
                 />
                 <p className="form__paragraph form__paragraph--smaller">
                     Kursy walut pochądzą ze strony nbp.pl z Tabeli nr 037/A/NBP/2023 z dnia 2023-02-22
