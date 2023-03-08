@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./style.css";
 import { currencies } from "../currencies";
-import Result from "../Result"
+import Result from "../Result";
 
 const Form = ({ title }) => {
     const [amount, setNewAmount] = useState("");
@@ -40,7 +40,9 @@ const Form = ({ title }) => {
                             onChange={onSelectChange}
                         >
                             {currencies.map(currency => (
-                                <option key={currency.id} value={currency.name}
+                                <option
+                                    key={currency.id}
+                                    value={currency.name}
                                 >
                                     {currency.name}
                                 </option>
@@ -50,10 +52,10 @@ const Form = ({ title }) => {
                 </p>
                 <button className="form__button">Oblicz</button>
                 <p className="form__paragraph">Otrzymasz:</p>
-                <Result 
-                amount={amount}
-                rate={rate}
-                currency={currency}
+                <Result
+                    amount={amount}
+                    rate={rate}
+                    currency={currency}
                 />
                 <p className="form__paragraph form__paragraph--smaller">
                     Kursy walut pochądzą ze strony nbp.pl z Tabeli nr 037/A/NBP/2023 z dnia 2023-02-22
