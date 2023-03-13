@@ -4,6 +4,22 @@
 ## Demo
 Here you can check my app [Currency converter](https://rkowal10.github.io/currency-converter-react/).
 
+## Description
+Enter the amount in PLN and select the currency for which you want to exchange.
+
+![Animation](https://github.com/Rkowal10/currency-converter-react/blob/main/public/Animation.gif)
+
+## Used technologies
+- HTML
+- JavaScript
+- CSS Flex
+- BEM
+- [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts
+
+In the project directory, you can run:
+
 ### `npm start`
 
 Runs the app in the development mode.\
