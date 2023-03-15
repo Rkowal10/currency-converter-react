@@ -1,8 +1,6 @@
 import "./style.css";
-import React from "react";
 
 const Result = ({ result }) => (
-
     <p className="result">
         {result !== undefined && (
             <>
