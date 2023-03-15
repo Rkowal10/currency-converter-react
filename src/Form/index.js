@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./style.css";
 import { currencies } from "../currencies";
 import Result from "../Result";
 
-const Form = ({ title, result, calculateResult }) => {
+const Form = ({ title }) => {
     const [amount, setNewAmount] = useState("");
     const [currency, setNewCurrency] = useState(currencies[0].name);
+    const [result, setResult] = useState();
+
+    const calculateResult = (amount, currency) => {
+        const rate = currencies.find(({ name }) => name === currency).value;
+
+        setResult({
+            result: amount / rate,
+            currency,
+        });
+    };
 
     const onSelectChange = ({ target }) => setNewCurrency(target.value);
 
