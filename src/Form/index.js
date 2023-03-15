@@ -5,23 +5,23 @@ import Result from "../Result";
 
 const Form = ({ title }) => {
     const [amount, setNewAmount] = useState("");
-    const [currency, setNewCurrency] = useState(currencies[0].name);
+    const [inputCurrency, setInputCurrency] = useState(currencies[0].name);
+    const [outputCurrency, setOutputCurrency] = useState(currencies[0].name);
     const [result, setResult] = useState();
 
-    const calculateResult = (amount, currency) => {
-        const rate = currencies.find(({ name }) => name === currency).value;
+    const calculateResult = (amount, inputCurrency, outputCurrency) => {
+        const inputRate = currencies.find(({ name }) => name === inputCurrency).value;
+        const outputRate = currencies.find(({ name }) => name === outputCurrency).value;
 
         setResult({
-            result: amount / rate,
-            currency,
+            result: (amount * inputRate) / outputRate,
+            outputCurrency,
         });
     };
 
-    const onSelectChange = ({ target }) => setNewCurrency(target.value);
-
     const onFormSubmit = (event) => {
         event.preventDefault();
-        calculateResult(amount, currency);
+        calculateResult(amount, inputCurrency, outputCurrency);
     };
 
     return (
@@ -42,18 +42,36 @@ const Form = ({ title }) => {
                     />
                 </label>
                 <p>
-                    <label className="form__label">Wybierz walutę:
+                    <label className="form__label">Wybierz walutę początkową:
                         <select
-                            value={currency}
+                            value={inputCurrency}
                             className="form__input"
-                            onChange={onSelectChange}
+                            onChange={({ target }) => setInputCurrency(target.value)}
                         >
-                            {currencies.map(currency => (
+                            {currencies.map(inputCurrency => (
                                 <option
-                                    key={currency.id}
-                                    value={currency.name}
+                                    key={inputCurrency.id}
+                                    value={inputCurrency.name}
                                 >
-                                    {currency.name}
+                                    {inputCurrency.name}
+                                </option>
+                            ))};
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label className="form__label">Wybierz walutę końcową:
+                        <select
+                            value={outputCurrency}
+                            className="form__input"
+                            onChange={({ target }) => setOutputCurrency(target.value)}
+                        >
+                            {currencies.map(outputCurrency => (
+                                <option
+                                    key={outputCurrency.id}
+                                    value={outputCurrency.name}
+                                >
+                                    {outputCurrency.name}
                                 </option>
                             ))};
                         </select>
