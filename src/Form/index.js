@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import { currencies } from "../currencies";
 import Result from "../Result";
+import Clock from "../Clock";
 
 const Form = ({ title }) => {
     const [amount, setNewAmount] = useState("");
@@ -28,6 +29,7 @@ const Form = ({ title }) => {
         <form className="form" onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">{title}</legend>
+                <Clock />
                 <label className="form__label">Jaką kwotę chcesz wymienić:
                     <input
                         className="form__input"
