@@ -1,4 +1,6 @@
-.form {
+import styled, { css } from "styled-components";
+
+export const StyledForm = styled.form`
     display: flex;
     flex-basis: 700px;
     justify-content: center;
@@ -6,58 +8,57 @@
     min-height: 80vh;
     margin: auto;
     font-weight: 500;
-}
+`;
 
-.form__fieldset {
+export const Fieldset = styled.fieldset`
     border: solid 1px;
     border-radius: 5px;
     margin: 0 auto;
     background-color: hsl(0, 24%, 89%);
-}
+`;
 
-.form__legend {
+export const Legend = styled.legend`
     border: solid 2px;
     border-radius: 5px;
     padding: 8px;
     font-size: x-large;
     background-color: hsl(0, 24%, 89%);
-}
+`;
 
-.form__label {
+export const Label = styled.label`
     padding: 20px;
     font-weight: 600;
-}
+`;
 
-.form__input {
+export const Input = styled.input`
     border-radius: 5px;
     border: solid 1px;
     padding: 5px;
     margin-left: 10px;
-}
 
-.form__input:hover {
-    background-color: hsl(0, 0%, 76%);
-}
+    &:hover {
+        background-color: hsl(0, 0%, 76%);
+    }
+`;
 
-.form__button {
+export const Button = styled.button`
     border-radius: 5px;
     border: solid 1px;
     padding: 10px;
     font-weight: 600;
     margin: 5px;
-}
 
-.form__button:hover {
-    background-color: hsl(0, 0%, 76%);
-}
+    &:hover {
+        background-color: hsl(0, 0%, 76%);
+    }
+`;
 
-.form__paragraph {
+export const Paragraph = styled.p`
     font-size: larger;
     text-align: center;
 
-}
-
-.form__paragraph--smaller {
-    font-size: small;
-    font-style: italic;
-}
+    ${({ smaller }) => smaller && css`
+        font-size: small;
+        font-style: italic;
+    `}
+`;
