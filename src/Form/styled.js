@@ -14,7 +14,7 @@ export const Fieldset = styled.fieldset`
     border: solid 1px;
     border-radius: 5px;
     margin: 0 auto;
-    background-color: hsl(0, 24%, 89%);
+    background-color: ${({ theme }) => theme.color.pearlBush};
 `;
 
 export const Legend = styled.legend`
@@ -22,7 +22,7 @@ export const Legend = styled.legend`
     border-radius: 5px;
     padding: 8px;
     font-size: x-large;
-    background-color: hsl(0, 24%, 89%);
+    background-color: ${({ theme }) => theme.color.pearlBush};
 `;
 
 export const Label = styled.label`
@@ -37,7 +37,7 @@ export const Input = styled.input`
     margin-left: 10px;
 
     &:hover {
-        background-color: hsl(0, 0%, 76%);
+        background-color: ${({ theme }) => theme.color.silver};
     }
 `;
 
@@ -49,7 +49,7 @@ export const Button = styled.button`
     margin: 5px;
 
     &:hover {
-        background-color: hsl(0, 0%, 76%);
+        background-color: ${({ theme }) => theme.color.silver};
     }
 `;
 
