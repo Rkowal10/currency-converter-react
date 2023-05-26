@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./style.css";
 import { currencies } from "../currencies";
-import Result from "../Result";
-import Clock from "../Clock";
+import Result from "./Result";
+import Clock from "./Clock";
 
 const Form = ({ title }) => {
     const [amount, setNewAmount] = useState("");
