@@ -1,3 +1,6 @@
 export const theme = {
-    backgroundColor: "hsl(0, 24 %, 89 %)",
+    color: {
+        pearlBush: "#eadcdc",
+        silver: "#c2c2c2",
+    },
 };
