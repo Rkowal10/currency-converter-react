@@ -13,8 +13,9 @@ Enter the amount in PLN and select the currency for which you want to exchange.
 - HTML
 - JavaScript
 - CSS Flex
-- BEM
-- [Create React App](https://github.com/facebook/create-react-app).
+- [Create React App](https://github.com/facebook/create-react-app)
+- React Hooks: useState, useEffect and Custom Hooks
+- Styled Components.
 
 ## Available Scripts
 
