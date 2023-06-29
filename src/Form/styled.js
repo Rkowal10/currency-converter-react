@@ -29,6 +29,10 @@ export const Label = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
+    @media (max-width: ${({theme}) => theme.breakpoint.mobile}px) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const LabelText = styled.label`
