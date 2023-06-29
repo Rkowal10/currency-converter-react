@@ -12,6 +12,7 @@ import {
     Button,
     Paragraph,
     Loading,
+    LoadingStatus,
     Error,
 } from "./styled";
 
@@ -41,9 +42,12 @@ const Form = ({ title }) => {
                 <Legend>{title}</Legend>
                 <Clock />
                 {ratesData.status === "loading" ? (
-                    <Loading>
-                        Proszę chwilę poczekać, trwa ładowanie danych!
-                    </Loading>
+                    <>
+                        <Loading>
+                            Proszę chwilę poczekać, trwa ładowanie danych!
+                        </Loading>
+                        <LoadingStatus />
+                    </>
                 ) : (
                     ratesData.status === "error" ? (
                         <Error>

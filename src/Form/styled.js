@@ -75,7 +75,26 @@ export const Paragraph = styled.p`
 `;
 
 export const Loading = styled.p`
-    color: ${({ theme }) => theme.color.CornflowerBlue};
+    font-size: larger;
+`;
+
+export const LoadingStatus = styled.div`
+    width: 100%;
+    height: 10px;
+    padding: 10px;
+    animation-duration: 3s;
+    animation-name: "loadingStatus";
+
+    @keyframes loadingStatus {
+        from {
+            width: 0%;
+            background-color: ${({ theme }) => theme.color.CornflowerBlue};
+        }
+        to {
+            width: 100%;
+            background-color: ${({ theme }) => theme.color.CornflowerBlue};
+        }
+    }
 `;
 
 export const Error = styled.p`
