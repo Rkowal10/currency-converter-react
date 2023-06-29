@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const useRatesData = () => {
     const [ratesData, setRatesData] = useState({
-        state: "loading",
+        status: "loading",
     });
 
     useEffect(() => {
@@ -13,13 +13,13 @@ export const useRatesData = () => {
                 const {rates, date} = response.data;
 
                 setRatesData({
-                    state: "success",
+                    status: "success",
                     rates,
                     date,
                 });
             } catch {
                 setRatesData({
-                    state: "error",
+                    status: "error",
                 });
             }
         };
