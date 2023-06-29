@@ -62,3 +62,11 @@ export const Paragraph = styled.p`
         font-style: italic;
     `}
 `;
+
+export const Loading = styled.p`
+    color: ${({ theme }) => theme.color.CornflowerBlue};
+`;
+
+export const Error = styled.p`
+    color: ${({ theme }) => theme.color.crimson};
+`;
