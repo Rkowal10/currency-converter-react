@@ -7,7 +7,7 @@ Here you can check my app [Currency converter](https://rkowal10.github.io/curren
 ## Description
 Enter the amount in PLN and select the currency for which you want to exchange.
 
-![Animation](https://github.com/Rkowal10/currency-converter-react/blob/main/public/Animation.gif)
+![Animation](https://github.com/Rkowal10/currency-converter-react/blob/main/public/newAnimation.gif)
 
 ## Used technologies
 - HTML
