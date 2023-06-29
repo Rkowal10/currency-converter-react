@@ -7,6 +7,7 @@ import {
     Fieldset,
     Legend,
     Label,
+    LabelText,
     Input,
     Button,
     Paragraph,
@@ -39,18 +40,19 @@ const Form = ({ title }) => {
             <Fieldset>
                 <Legend>{title}</Legend>
                 <Clock />
-                {ratesData.state === "loading" ? (
+                {ratesData.status === "loading" ? (
                     <Loading>
                         Proszę chwilę poczekać, trwa ładowanie danych!
                     </Loading>
                 ) : (
-                    ratesData.state === "error" ? (
+                    ratesData.status === "error" ? (
                         <Error>
                             Coś poszło nie tak!
                         </Error>
                     ) : (
                         <>
-                            <Label>Podaj kwotę w PLN do wymiany:
+                            <Label>
+                                <LabelText>Podaj kwotę w PLN do wymiany:</LabelText>
                                 <Input
                                     type="number"
                                     value={amount}
@@ -62,30 +64,29 @@ const Form = ({ title }) => {
                                     placeholder="Wpisz kwotę"
                                 />
                             </Label>
-                            <p>
-                                <Label>Wybierz walutę końcową:
-                                    <Input as="select"
-                                        value={outputCurrency}
-                                        onChange={({ target }) => setOutputCurrency(target.value)}
-                                    >
-                                        {Object.keys(ratesData.rates).map(((outputCurrency) => (
-                                            <option
-                                                key={outputCurrency}
-                                                value={outputCurrency}
-                                            >
-                                                {outputCurrency}
-                                            </option>
-                                        )))};
-                                    </Input>
-                                </Label>
-                            </p>
+                            <Label>
+                                <LabelText>Wybierz walutę końcową:</LabelText>
+                                <Input as="select"
+                                    value={outputCurrency}
+                                    onChange={({ target }) => setOutputCurrency(target.value)}
+                                >
+                                    {Object.keys(ratesData.rates).map(((outputCurrency) => (
+                                        <option
+                                            key={outputCurrency}
+                                            value={outputCurrency}
+                                        >
+                                            {outputCurrency}
+                                        </option>
+                                    )))};
+                                </Input>
+                            </Label>
                             <Button>Oblicz</Button>
                             <Paragraph>Otrzymasz:</Paragraph>
                             <Result
                                 result={result}
                             />
                             <Paragraph smaller>
-                                Kursy walut pobrane ze strony <a rel="noreferrer noopener" target="_blank" href="https://exchangerate.host">https://exchangerate.host</a>.
+                                Kursy walut pobrane ze strony <a rel="noreferrer noopener" target="_blank" href="https://exchangerate.host">https://exchangerate.host</a> na dzień <b>{ratesData.date}</b>.
                             </Paragraph>
                         </>
                     )

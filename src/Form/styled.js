@@ -25,16 +25,23 @@ export const Legend = styled.legend`
     background-color: ${({ theme }) => theme.color.pearlBush};
 `;
 
-export const Label = styled.label`
+export const Label = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+`;
+
+export const LabelText = styled.label`
     padding: 20px;
     font-weight: 600;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input` 
     border-radius: 5px;
     border: solid 1px;
     padding: 5px;
     margin-left: 10px;
+    text-align: center;
 
     &:hover {
         background-color: ${({ theme }) => theme.color.silver};
@@ -46,7 +53,7 @@ export const Button = styled.button`
     border: solid 1px;
     padding: 10px;
     font-weight: 600;
-    margin: 5px;
+    margin: 15px 5px 5px;
 
     &:hover {
         background-color: ${({ theme }) => theme.color.silver};
