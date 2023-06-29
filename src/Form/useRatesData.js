@@ -24,7 +24,7 @@ export const useRatesData = () => {
             }
         };
 
-        setTimeout(axiosRates, 2000);
+        setTimeout(axiosRates, 3000);
     }, []);
 
     return ratesData;
