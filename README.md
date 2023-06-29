@@ -15,7 +15,9 @@ Enter the amount in PLN and select the currency for which you want to exchange.
 - CSS Flex
 - [Create React App](https://github.com/facebook/create-react-app)
 - React Hooks: useState, useEffect and Custom Hooks
-- Styled Components.
+- Styled Components
+- API
+- Axios.
 
 ## Available Scripts
 
