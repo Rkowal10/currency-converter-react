@@ -6,4 +6,7 @@ export const theme = {
         crimson: "#db143c",
         CornflowerBlue: "#380CCA",
     },
+    breakpoint: {
+        mobile: 767,
+    },
 };
