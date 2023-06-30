@@ -51,7 +51,8 @@ const Form = ({ title }) => {
                 ) : (
                     ratesData.status === "error" ? (
                         <Error>
-                            Coś poszło nie tak!
+                            <p>Coś poszło nie tak! ❌<br />
+                            Sprawdź połączenie z Internetem lub spróbuj ponownie później 😈</p>
                         </Error>
                     ) : (
                         <>
