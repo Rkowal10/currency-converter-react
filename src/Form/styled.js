@@ -14,7 +14,7 @@ export const Fieldset = styled.fieldset`
     border: solid 1px;
     border-radius: 5px;
     margin: 0 auto;
-    background-color: ${({ theme }) => theme.color.pearlBush};
+    background-color: ${({ theme }) => theme.color.alto};
 `;
 
 export const Legend = styled.legend`
@@ -22,7 +22,7 @@ export const Legend = styled.legend`
     border-radius: 5px;
     padding: 8px;
     font-size: x-large;
-    background-color: ${({ theme }) => theme.color.pearlBush};
+    background-color: ${({ theme }) => theme.color.alto};
 `;
 
 export const Label = styled.div`
