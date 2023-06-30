@@ -5,7 +5,7 @@
 Here you can check my app [Currency converter](https://rkowal10.github.io/currency-converter-react/).
 
 ## Description
-Enter the amount in PLN and select the currency for which you want to exchange.
+Enter the amount, select the currency which you have and next select the currency for which you want to exchange.
 
 ![Animation](https://github.com/Rkowal10/currency-converter-react/blob/main/public/newAnimation.gif)
 
@@ -13,6 +13,7 @@ Enter the amount in PLN and select the currency for which you want to exchange.
 - HTML
 - JavaScript
 - CSS Flex
+- CSS Grid
 - [Create React App](https://github.com/facebook/create-react-app)
 - React Hooks: useState, useEffect and Custom Hooks
 - Styled Components
