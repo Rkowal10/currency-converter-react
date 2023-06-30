@@ -19,21 +19,23 @@ import {
 const Form = ({ title }) => {
     const [amount, setNewAmount] = useState("");
     const [result, setResult] = useState();
+    const [inputCurrency, setInputCurrency] = useState("PLN");
     const [outputCurrency, setOutputCurrency] = useState("GBP");
     const ratesData = useRatesData();
 
-    const calculateResult = (amount, outputCurrency) => {
+    const calculateResult = (amount, inputCurrency, outputCurrency) => {
+        const inputRate = ratesData.rates[inputCurrency];
         const outputRate = ratesData.rates[outputCurrency];
 
         setResult({
-            result: amount * outputRate,
+            result: (amount / inputRate) * outputRate,
             outputCurrency,
         });
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        calculateResult(amount, outputCurrency);
+        calculateResult(amount, inputCurrency, outputCurrency);
     };
 
     return (
@@ -57,7 +59,7 @@ const Form = ({ title }) => {
                     ) : (
                         <>
                             <Label>
-                                <LabelText>Podaj kwotę w PLN do wymiany:</LabelText>
+                                <LabelText>Podaj kwotę jaką chcesz wymienić:</LabelText>
                                 <Input
                                     type="number"
                                     value={amount}
@@ -68,6 +70,22 @@ const Form = ({ title }) => {
                                     autoFocus={true}
                                     placeholder="Wpisz kwotę"
                                 />
+                            </Label>
+                            <Label>
+                                <LabelText>Wybierz walutę początkową:</LabelText>
+                                <Input as="select"
+                                    value={inputCurrency}
+                                    onChange={({ target }) => setInputCurrency(target.value)}
+                                >
+                                    {Object.keys(ratesData.rates).map(((inputCurrency) => (
+                                        <option
+                                            key={inputCurrency}
+                                            value={inputCurrency}
+                                        >
+                                            {inputCurrency}
+                                        </option>
+                                    )))};
+                                </Input>
                             </Label>
                             <Label>
                                 <LabelText>Wybierz walutę końcową:</LabelText>
